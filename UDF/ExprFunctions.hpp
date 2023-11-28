@@ -75,19 +75,13 @@ inline int64_t round_threshold(float num_to_round, float threshold) {
     int64_t return_num = integer_part + rounded;
     return return_num;
   }
-
-inline int64_t multiply(int64_t a, int64_t b) {
-    int64_t result;
-    result = a*b;
-    return result;
-  }
-
+  
 inline Assignment_Tuple2 Driver_PTA(
     int64_t clock_8_h,
     int64_t clock_11_h,
     int64_t clock_14_h,
     int64_t current_time,
-    int64_t duty_status_last_changed_timeafaf) {
+    int64_t duty_status_last_changed_time) {
 	
 	
 	  if ( (clock_8_h == 0) && (clock_11_h == 0) && (clock_14_h == 0) )
