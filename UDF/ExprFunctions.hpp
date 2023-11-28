@@ -78,7 +78,7 @@ inline int64_t round_threshold(float num_to_round, float threshold) {
 
 inline int64_t multiply(int64 a, int64 b) {
     int64_t result;
-    result = a*b
+    result = a*b;
     return result;
   }
   
