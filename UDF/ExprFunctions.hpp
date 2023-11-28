@@ -75,6 +75,12 @@ inline int64_t round_threshold(float num_to_round, float threshold) {
     int64_t return_num = integer_part + rounded;
     return return_num;
   }
+
+inline float mult(float a, float b) {
+    float prod;
+    prod = a * b;
+    return prod;
+  }
   
 inline Assignment_Tuple2 Driver_PTA(
     int64_t clock_8_h,
