@@ -81,7 +81,7 @@ inline Assignment_Tuple2 Driver_PTA(
     int64_t clock_11_h,
     int64_t clock_14_h,
     int64_t current_time,
-    int64_t duty_status_last_changed_time
+    int64_t duty_status_last_changed_time,
     int64_t test ) {
 	
 	
