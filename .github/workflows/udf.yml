@@ -21,10 +21,10 @@ jobs:
     - name: Set environment for branch
       id: set-variable
       run: |
-        if [[ ${{ inputs.instance }} == "00" ]]; then
+        if [[ ${{ inputs.instance }} == 00 ]]; then
           echo "group=vm00-runners" >> $GITHUB_OUTPUT
           echo "branch=testing" >> $GITHUB_OUTPUT
-        elif [[ ${{ inputs.instance }} == "01" ]]; then
+        elif [[ ${{ inputs.instance }} == 01 ]]; then
           echo "group=vm01-runners" >> $GITHUB_OUTPUT
           echo "branch=main" >> $GITHUB_OUTPUT
         fi
