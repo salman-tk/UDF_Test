@@ -46,5 +46,13 @@ jobs:
       run: |
         filelist=($(cat filelist.txt))
         echo "$filelist"
+        
+        files_list="${filelist[@]}"
+        echo "$files_list"
+
+        for file in  ${filelist[@]}
+        do
+          echo "$file"
+        done
         echo " configuration: ${{needs.setvariables.outputs.branch}}"
         echo " configuration: ${{needs.setvariables.outputs.group}}"
