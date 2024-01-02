@@ -39,7 +39,7 @@ jobs:
           M  MTA_assignment_builder
           M  MTA_assignment_builder_home_time_check
           M  MTA_assignment_builder_fleet
-          EOL
+        EOL
           )
         echo "$filelist"
     - name: Deploy in Testing
