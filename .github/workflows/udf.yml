@@ -21,6 +21,7 @@ jobs:
     - name: Set environment for branch
       id: set-variable
       run: |
+        echo " ${{ inputs.instance }}"
         if [[ ${{ inputs.instance }} == 00 ]]; then
           echo "00"
           echo "group=vm00-runners" >> $GITHUB_OUTPUT
