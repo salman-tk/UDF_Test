@@ -35,11 +35,12 @@ jobs:
     steps:
     - name: Define queries
       run: |
-        read -d '\n' filelist << EOL
-        M  MTA_assignment_builder
-        M  MTA_assignment_builder_home_time_check
-        M  MTA_assignment_builder_fleet
-        EOL
+        filelist=$(cat <<EOL
+          M  MTA_assignment_builder
+          M  MTA_assignment_builder_home_time_check
+          M  MTA_assignment_builder_fleet
+          EOL
+          )
         echo "$filelist"
     - name: Deploy in Testing
       run: |
