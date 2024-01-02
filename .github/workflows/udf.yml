@@ -31,8 +31,7 @@ jobs:
   deploy:
     name: Deployment Job
     needs: setvariables
-    runs-on: 
-      group: ${{needs.setvariables.outputs.group}}
+    runs-on: ubuntu-latest
     steps:
     - name: Deploy in Testing
       run: |
