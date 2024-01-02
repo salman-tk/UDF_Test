@@ -33,7 +33,16 @@ jobs:
     needs: setvariables
     runs-on: ubuntu-latest
     steps:
+    - name: Define queries
+      run: |
+        read -r -d '' filelist << EOL
+        M  MTA_assignment_builder
+        M  MTA_assignment_builder_home_time_check
+        M  MTA_assignment_builder_fleet
+        EOL
+        echo "$filelist"
     - name: Deploy in Testing
       run: |
+        echo "$filelist"
         echo " configuration: ${{needs.setvariables.outputs.branch}}"
         echo " configuration: ${{needs.setvariables.outputs.group}}"
