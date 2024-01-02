@@ -41,9 +41,10 @@ jobs:
           M  MTA_assignment_builder_fleet
         EOL
           )
-        echo "$filelist"
+        echo "$filelist" > filelist.txt
     - name: Deploy in Testing
       run: |
+        filelist=($(cat filelist.txt))
         echo "$filelist"
         echo " configuration: ${{needs.setvariables.outputs.branch}}"
         echo " configuration: ${{needs.setvariables.outputs.group}}"
