@@ -43,9 +43,30 @@ jobs:
           )
         echo "$filelist" > filelist.txt
     - name: Deploy in Testing
+      if: ${{ needs.setvariables.outputs.branch == 'testing' }}
       run: |
-        filelist=($(cat filelist.txt))
-        files_list="${filelist[@]}"
+        echo "Running Deployment scripts with configuration: Testing"
+        fileContents=($(cat filelist.txt))
+        files_list="${fileContents[@]}"
         echo "$files_list"
-        echo " configuration: ${{needs.setvariables.outputs.branch}}"
-        echo " configuration: ${{needs.setvariables.outputs.group}}"
+    - name: Deploy in Regression
+      if: ${{ always() && needs.setvariables.outputs.branch == 'testing' }}
+      run: |
+        echo "Running Deployment scripts with configuration: Regression"
+        fileContents=($(cat filelist.txt))
+        files_list="${fileContents[@]}"
+        echo "$files_list"
+    - name: Deploy in Sandbox
+      if: ${{ always() && needs.setvariables.outputs.branch == 'testing' }}
+      run: |
+        echo "Running Deployment scripts with configuration: Sandbox"
+        fileContents=($(cat filelist.txt))
+        files_list="${fileContents[@]}"
+        echo "$files_list"
+    - name: Deploy in Pre_Production
+      if: ${{ needs.setvariables.outputs.branch == 'main' }}       
+      run: |
+        echo "Running Deployment scripts with configuration: Pre_Production"
+        fileContents=($(cat filelist.txt))
+        files_list="${fileContents[@]}"
+        echo "$files_list"
